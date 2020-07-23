@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-testloop" version="1.0.0">
+   <name>TestLoop</name>
+   <js-module name="TestLoop" src="www/TestLoop.js">
+      <clobbers target="TestLoop" />
+   </js-module>
+   <platform name="android">
+      <config-file parent="/*" target="res/xml/config.xml">
+         <feature name="TestLoop">
+            <param name="android-package" value="cordova.plugin.testloop.TestLoop" />
+         </feature>
+      </config-file>
+      <config-file parent="/*" target="AndroidManifest.xml" />
+      <source-file src="src/android/TestLoop.java" target-dir="src/cordova/plugin/testloop/TestLoop" />
+   </platform>
+</plugin>
